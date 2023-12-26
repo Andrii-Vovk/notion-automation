@@ -1,8 +1,11 @@
 // src/index.js
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 
 dotenv.config();
+
+mongoose.connect(process.env.MONGO_URL || "");
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
